@@ -12,7 +12,7 @@ create-react-app myapp
 
 cd myapp
 
-yarn add antd react-router react-redux react-thunk
+yarn add antd react-router redux react-redux react-thunk
 
 yarn start
 ```
