@@ -31,4 +31,8 @@ action与redux中完全一样都需要有个type字段，不过dva的model中提
 store和redux也是一致的，通过app._store可以访问，store不用单独创建，但是需要app绑定到model上，调用`app.model(mymodel)`方法。
 ## component
 组件是react的写法，要绑定到dva的store上的话，也需要调用connect方法来完成。
+# dva vs redux
+![image](redux1.png)  
+![image](redux2.png)  
+![image](dva.png)  
 
