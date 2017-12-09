@@ -19,6 +19,7 @@ yarn start
 [目录](create-react-app/)中src是放置代码的地方，该目录中`index.js`为入口文件，public下的`index.html`是html的入口。
 # Redux 
 redux可以合理的管理state，在大项目中是非常有用的。可以参考[Demo](redux/)
-# dva
+# Dva
+dva是国人开发的基于redux react-router等，进行开发的一个工具或者叫框架，他是对其他框架的整合和简化。用起来非常简单。
 # 用dva-cli开发
 

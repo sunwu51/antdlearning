@@ -1,0 +1,60 @@
+Arguments: 
+  D:\Program Files\nodejs\node.exe C:\Users\Frank David\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Frank David\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Java\jre1.8.0_111\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Python27;D:\Program Files\MongoDB\Server\3.4\bin;D:\Go\bin;D:\spark\bin;D:\Program Files (x86)\Git\bin;D:\ant\bin;D:\maven\bin;D:\groovy-2.4.9\bin;D:\gradle-3.4.1\bin;D:\grails-3.2.8\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Users\Frank David\Downloads\winutils-master\winutils-master\hadoop-2.8.0-RC3\bin;C:\Python27\Scripts;D:\curl-7.55.1-win32-mingw\bin;D:\Program Files\nodejs\;C:\Users\Frank David\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\Frank David\AppData\Local\Programs\Python\Python35-32\;C:\Users\Frank David\AppData\Roaming\Composer\vendor\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Python27;C:\Python27\Scripts;C:\Users\Frank David\AppData\Roaming\npm
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  8.9.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "private": true,
+    "scripts": {
+      "start": "roadhog server",
+      "build": "roadhog build",
+      "lint": "eslint --ext .js src test",
+      "precommit": "npm run lint"
+    },
+    "engines": {
+      "install-node": "6.11.1"
+    },
+    "dependencies": {
+      "antd": "^3.0.0",
+      "babel-runtime": "^6.9.2",
+      "dva": "^2.1.0",
+      "dva-loading": "^0.2.0",
+      "react": "^15.4.0",
+      "react-dom": "^15.4.0"
+    },
+    "devDependencies": {
+      "babel-eslint": "^7.1.1",
+      "babel-plugin-dva-hmr": "^0.3.2",
+      "babel-plugin-import": "^1.6.2",
+      "babel-plugin-transform-runtime": "^6.9.0",
+      "eslint": "^3.12.2",
+      "eslint-config-airbnb": "^13.0.0",
+      "eslint-plugin-import": "^2.2.0",
+      "eslint-plugin-jsx-a11y": "^2.2.3",
+      "eslint-plugin-react": "^6.8.0",
+      "expect": "^1.20.2",
+      "husky": "^0.12.0",
+      "redbox-react": "^1.4.3",
+      "roadhog": "^1.2.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\Frank David\AppData\Local\Yarn\cache\v1\npm-ansi-styles-3.2.0-c159b8d5be0f9e5a6f346dab94f16ce022161b88\license' -> 'C:\Users\Frank David\Desktop\dva\node_modules\autoprefixer\node_modules\ansi-styles\license'
