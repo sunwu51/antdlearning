@@ -2,7 +2,7 @@ import { Modal, Button } from 'antd';
 const confirm = Modal.confirm;
 
 
-function showDeleteConfirm(onOk) {
+function showDeleteConfirm(onOk2) {
   confirm({
     title: '提示',
     content: '是否确定删除',
@@ -10,7 +10,7 @@ function showDeleteConfirm(onOk) {
     okType: 'danger',
     cancelText: '取消',
     onOk(){
-        onOk();
+        onOk2();
     },
     onCancel() {
     },

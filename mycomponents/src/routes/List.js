@@ -9,7 +9,10 @@ const col=[ {
   },{
     title: '配置id',
     key: 'gconfid',
-    type:"number"    
+    type:"number",
+    selection:[
+      0,1,2
+    ]      
   }, {
     title: 'mqtt客户端',
     key: 'mqttclientid',
@@ -39,38 +42,7 @@ const col=[ {
     type:"string"
   }
 ];
-const col2=[ {
-    key: 'gid',
-    isId: true
-  },{
-    key: 'gconfid', 
-  }, {
-    key: 'mqttclientid',
 
-  },
-  {
-
-    key: 'mqttpassword',
-
-  },{
-
-    key: 'online',
-
-    render: (t,r)=>{return t.toString()}
-  },{
-
-    key: 'position',
-
-  },{
-
-    key: 'seq',
-
-  },{
-
-    key: 'remark',
-
-  }
-];
 
 class App extends React.Component{
     state={
@@ -92,7 +64,7 @@ class App extends React.Component{
         this.getData();
     }
     render(){
-        return <List  colums={col2} dataSource={this.state.ds}
+        return <List  colums={col} dataSource={this.state.ds}
             onAdd={(record)=>{console.log("添加条目",record)}}
             onDelete={(record)=>{console.log("删除条目",record)}}
             onUpdate={(record)=>{console.log("更新条目",record)}}

@@ -10,10 +10,16 @@ class App extends React.Component {
     this.setState({
       visible: true,
     });
-    let s =this.props.record;
+    let s =Object.assign({},this.props.record);
+    console.log(s)
     for(let k in s){
-      s[k]=s[k].toString()
+      if(! (_.find(this.props.titles,{key:k,editable:false})))
+       s[k]=s[k].toString()
+      else
+       delete s[k]
     }
+    console.log(this.props.record)
+    this.props.form.resetFields();
     this.props.form.setFieldsValue(s)
   }
   handleOk = (e) => { 
@@ -38,14 +44,23 @@ class App extends React.Component {
     const { getFieldDecorator } = this.props.form;
     const titles = this.props.titles;
     const record = this.props.record;
+    
     const InputItem = (
         titles.map(it=>{
           if(it.key=='_action')return;
+          
+          let inputit=(<Input />)
+          if(Array.isArray(it.selection)){
+            let options=it.selection.map(item=>(
+            <Option key={item} value={item}>{item}</Option>
+            ))
+            inputit= <Select placeholder={"选择一个"+it.title}>{options}</Select> 
+          }
+            
           const {key,title,type}=it;
           let init=null;
           if(record[key]||record[key]===false)
             init=record[key].toString()
-            console.log(it.editable)
           if(it.editable===false);
           else
             return(
@@ -58,7 +73,7 @@ class App extends React.Component {
                 {getFieldDecorator(key, {
                 rules: [{required:true,type,message: '请输入合法的'+title, initialValue: String(init),transform:(el)=>{if(type=='number'&&!isNaN(el))return parseFloat(el);else{return el}} }]
                 })(
-                <Input/>
+                  inputit
                 )}
             </FormItem>
         )})

@@ -16,7 +16,7 @@ class List extends React.Component{
     render(){
         let {colums,dataSource}=this.props;
         colums=colums.map(it=>{return Object.assign({title:it.key,dataIndex:it.key,type:"string"},it)});
-        const titles = colums.map(it=>{return {key:it.key,title:it.title,type:it.type,editable:it.editable}})
+        const titles = colums;
         let rowKey = colums.filter(i=>i.isId)[0]?colums.filter(i=>i.isId)[0]['key']:undefined;
         if(colums.filter(it=>it.key=='_action').length<1)
           colums.push({
