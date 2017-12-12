@@ -11,8 +11,8 @@ const col=[ {
     key: 'gconfid',
     type:"number",
     selection:[
-      0,1,2
-    ]      
+        0,1,2
+    ]    
   }, {
     title: 'mqtt客户端',
     key: 'mqttclientid',
@@ -50,7 +50,7 @@ class App extends React.Component{
     }
     getData(){
         let that = this;
-        fetch('http://localhost/gateway',{'headers':{'Authorization':'Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTMwODIyMDEsInN1YiI6IntcInVpZFwiOjIsXCJ1c2VybmFtZVwiOlwiYWRtaW5cIixcInBhc3N3b3JkXCI6XCIxMjNcIixcInJvbGVcIjpcIlJPTEVfQURNSU5cIn0iLCJleHAiOjE1MTMwODU4MDF9.2FYqGrQCVCrlpopo67Z1JN6mB4RetWLHhU35log7s6U'},'method':'get'}).
+        fetch('http://120.76.136.124:9090/gateway',{'headers':{'Authorization':'Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTMwOTc3MDQsInN1YiI6IntcInVpZFwiOjIsXCJ1c2VybmFtZVwiOlwiYWRtaW5cIixcInBhc3N3b3JkXCI6XCIxMjNcIixcInJvbGVcIjpcIlJPTEVfQURNSU5cIn0iLCJleHAiOjE1MTMxMDEzMDR9.Z1w9iLAJcHAAUkPPhPQSpIrFshTXw1JtX7sWdFDy_Fw'},'method':'get'}).
         then(r=>r.json()).
         then(function(data){
             if(data.status==401||data/status==403){
@@ -64,7 +64,7 @@ class App extends React.Component{
         this.getData();
     }
     render(){
-        return <List  colums={col} dataSource={this.state.ds}
+        return <List  columns={col} dataSource={this.state.ds}
             onAdd={(record)=>{console.log("添加条目",record)}}
             onDelete={(record)=>{console.log("删除条目",record)}}
             onUpdate={(record)=>{console.log("更新条目",record)}}

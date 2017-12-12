@@ -3,6 +3,7 @@ import { Table, Icon, Divider,Button } from 'antd';
 import DelModal from './DelModal';
 import EditModal from './EditModal';
 import _ from 'lodash';
+import PropTypes from 'prop-types';
 
 
 class List extends React.Component{
@@ -14,12 +15,12 @@ class List extends React.Component{
     handleUpdate=record=>{this.props.onUpdate(record)}
     
     render(){
-        let {colums,dataSource}=this.props;
-        colums=colums.map(it=>{return Object.assign({title:it.key,dataIndex:it.key,type:"string"},it)});
-        const titles = colums;
-        let rowKey = colums.filter(i=>i.isId)[0]?colums.filter(i=>i.isId)[0]['key']:undefined;
-        if(colums.filter(it=>it.key=='_action').length<1)
-          colums.push({
+        let {columns,dataSource}=this.props;
+        columns=columns.map(it=>{return Object.assign({title:it.key,dataIndex:it.key,type:"string"},it)});
+        const titles = columns;
+        let rowKey = columns.filter(i=>i.isId)[0]?columns.filter(i=>i.isId)[0]['key']:undefined;
+        if(columns.filter(it=>it.key=='_action').length<1)
+          columns.push({
             title: '操作',
             key: '_action',
             render: (text, record) => (
@@ -42,11 +43,18 @@ class List extends React.Component{
                 <Button type="primary">创建</Button>
               </EditModal>
               <div>
-                <Table rowKey={rowKey} columns={colums} dataSource={dataSource} />
+                <Table rowKey={rowKey} columns={columns} dataSource={dataSource} />
               </div>
             </span>
           );
     }
 
+}
+List.propTypes = {
+  columns: PropTypes.array.isRequired,
+  dataSource: PropTypes.array.isRequired,
+  onAdd: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onUpdate: PropTypes.func.isRequired,
 }
 export default List;
